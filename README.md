@@ -1,4 +1,4 @@
-# hugo-notice
+# hugo-video
 
 <!-- [![Awesome](https://awesome.re/badge.svg)](https://github.com/budparr/awesome-hugo) -->
 
