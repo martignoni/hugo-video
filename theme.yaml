@@ -1,0 +1,20 @@
+# theme.yaml configuration file
+
+name: Video embedding
+license: GPLv3
+licenselink: https://github.com/martignoni/hugo-video/blob/master/LICENSE
+description: Hugo theme component to embed videos
+homepage: https://github.com/martignoni/hugo-video
+tags:
+  - component
+  - video
+  - embed
+  - multilingual
+features:
+  - simple video embedding
+  - multilingual (en, fr, de)
+min_version: 0.40.0
+
+author:
+  name: Nicolas Martignoni
+  homepage: https://martignoni.net

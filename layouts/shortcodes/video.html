@@ -1,0 +1,56 @@
+{{/*  hugo-video shortcode
+/*
+/*    This file is part of hugo-video shortcode.
+/*    A Hugo component shortcode to embed videos using the HTML video element.
+/*
+/*    @copyright  @2019 onwards Nicolas Martignoni (nicolas@martignoni.net)
+/*    @source     https://github.com/martignoni/hugo-video
+/*    @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+/*
+*/}}
+
+{{ $video_src := .Get "src" }}
+{{ $video_mp4 := "" }}
+{{ $video_webm := "" }}
+{{ $video_ogg := "" }}
+{{ $video_dl := "" }}
+{{ $width := "100%" }}
+
+{{/* Find all files with filename (without suffix) matching "src" parameter */}}
+{{ $video_files := (.Page.Resources.Match (printf "%s*" $video_src)) }}
+
+{{/* Find first image file with filename (without suffix) matching "src" parameter */}}
+{{ $poster := ((.Page.Resources.ByType "image").GetMatch (printf "%s*" $video_src)) }}
+
+{{/* Find in page bundle all valid video files with matching name */}}
+{{ with $video_files }}
+  {{ range . }}
+    {{ if (in .MediaType.Suffixes "mp4") }}
+      {{ $video_mp4 = . }}
+    {{ end }}
+    {{ if (in .MediaType.Suffixes "webm") }}
+      {{ $video_webm = . }}
+    {{ end }}
+    {{ if (in .MediaType.Suffixes "ogv") }}
+      {{ $video_ogg = . }}
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ errorf "No valid video file with filename %q found." $video_src }}
+{{ end }}
+
+<video controls preload="auto" width="{{ or (.Get "width") $width }}" {{ with $poster }}poster="{{ .RelPermalink }}"{{ end }}class="html-video">
+  {{ with $video_webm }}
+    <source src="{{ $video_webm.RelPermalink }}" type="video/webm" }}>
+    {{ $video_dl = $video_webm }}
+  {{ end }}
+  {{ with $video_ogg }}
+    <source src="{{ $video_ogg.RelPermalink }}" type="video/ogg" }}>
+    {{ $video_dl = $video_ogg }}
+  {{ end }}
+  {{ with $video_mp4 }}
+    <source src="{{ $video_mp4.RelPermalink }}" type="video/mp4" }}>
+    {{ $video_dl = $video_mp4 }}
+  {{ end }}
+  <p>{{ i18n "videoUnsupported" $video_dl }}
+</video>
