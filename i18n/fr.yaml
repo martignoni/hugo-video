@@ -1,2 +1,2 @@
 - id: videoUnsupported
-  translation: "Votre navigateur ne permet pas l'intégration de vidéos, mais ce n'est pas grave ; vous pouvez la <a href=\"{{ .RelPermalink }}\">la télécharger</a> et la voir dans votre lecteur vidéo préféré !"
+  translation: "Votre navigateur ne permet pas l'intégration de vidéos, mais ce n'est pas grave ; vous pouvez <a href=\"{{ .RelPermalink }}\">la télécharger</a> et la voir dans votre lecteur vidéo préféré !"
