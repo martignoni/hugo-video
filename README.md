@@ -23,7 +23,8 @@ Default values:
 - Browser's default controls are displayed (`controls` attribute is included)
 - Video can be preloaded (`preload="auto"` attribute is included)
 - Video width is 100% (`width="100%"` attribute is included); this can be changed by indicating the desired width when calling the shortcode, see example below)
-- Other video attributes are not set, meaning that the default settings are used
+- Following video attributes can be set: `muted="true"`, `autoplay="true"` and `loop="true"`. Credits goes to Tom McKenzie for this feature
+- Default settings are used for other video attributes
 
 When no video file of the given name is found in the supported format (see above), the shortcode intentionally fails with a `No valid video file with filename <filename> found.` error.
 
@@ -50,6 +51,14 @@ When no video file of the given name is found in the supported format (see above
     {{< video src="my-beautiful-screencast" width="600px" >}}
     ```
 
-### Credits
+### Thanks
+
+- To Tom McKenzie (@grrowl), for implementing `muted`, `autoplay` and `loop` video attributes support.
+
+### Licence
 
 Copyright © 2019 onwards, Nicolas Martignoni nicolas@martignoni.net.
+
+All the source code is licensed under GPL 3 or any later version
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
