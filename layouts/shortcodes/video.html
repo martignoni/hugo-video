@@ -39,7 +39,7 @@
   {{ errorf "No valid video file with filename %q found." $video_src }}
 {{ end }}
 
-<video controls preload="auto" width="{{ or (.Get "width") $width }}" {{ with $poster }}poster="{{ .RelPermalink }}"{{ end }}class="html-video">
+<video controls preload="auto" width="{{ or (.Get "width") $width }}" {{ if eq (.Get "autoplay") "true" }}autoplay {{ end }}{{ if eq (.Get "loop") "true" }}loop {{ end }}{{ if eq (.Get "muted") "true" }}muted {{ end }}{{ with $poster }}poster="{{ .RelPermalink }}" {{ end }}class="html-video">
   {{ with $video_webm }}
     <source src="{{ $video_webm.RelPermalink }}" type="video/webm" }}>
     {{ $video_dl = $video_webm }}
