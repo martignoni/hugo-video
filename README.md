@@ -15,7 +15,7 @@ This shortcode uses Hugo Page Resources. It takes one mandatory argument: the fi
 When the browser doesn't support the [HTML video element](https://devdocs.io/html/element/video), the shortcode displays a localized notice allowing the video download for local playing.
 
 Following video formats are supported:
-- MP4 (extension `.mp4`)
+- MP4 (extension `.mp4` or `.m4v`)
 - WebM, (extension `.webm`)
 - Ogg, (extension `.ogv`)
 
@@ -53,7 +53,8 @@ When no video file of the given name is found in the supported format (see above
 
 ### Thanks
 
-- To Tom McKenzie (@grrowl), for implementing `muted`, `autoplay` and `loop` video attributes support.
+- To [Tom McKenzie](https://github.com/grrowl), for implementing `muted`, `autoplay` and `loop` video attributes support.
+- To [Olaf Haag](https://github.com/OlafHaag), for raising and fixing some bugs.
 
 ### Licence
 
