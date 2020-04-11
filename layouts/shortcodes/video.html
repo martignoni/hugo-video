@@ -57,6 +57,6 @@
     <source src="{{ $video_mp4.RelPermalink }}" type="video/mp4" }}>
     {{ $video_dl = $video_mp4 }}
   {{ end }}
-  <p>{{ i18n "videoUnsupported" $video_dl }}</p>
+  <p>{{ i18n "videoUnsupported" $video_dl | markdownify }}</p>
 </video>
 {{ end }}
