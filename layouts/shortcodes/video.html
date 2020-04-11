@@ -15,15 +15,17 @@
 {{ $video_ogg := "" }}
 {{ $video_dl := "" }}
 {{ $width := "100%" }}
+{{ $filenotfound := true }}
 
-{{/* Find all files with filename (without suffix) matching "src" parameter */}}
+{{/* Find all files with filename (without suffix) matching "src" parameter. */}}
 {{ $video_files := (.Page.Resources.Match (printf "%s*" $video_src)) }}
 
-{{/* Find first image file with filename (without suffix) matching "src" parameter */}}
+{{/* Find first image file with filename (without suffix) matching "src" parameter. */}}
 {{ $poster := ((.Page.Resources.ByType "image").GetMatch (printf "%s*" $video_src)) }}
 
-{{/* Find in page bundle all valid video files with matching name */}}
+{{/* Find in page bundle all valid video files with matching name. */}}
 {{ with $video_files }}
+  {{ $filenotfound = false }}
   {{ range . }}
     {{ if (in .MediaType.Suffixes "mp4") }}
       {{ $video_mp4 = . }}
@@ -36,9 +38,12 @@
     {{ end }}
   {{ end }}
 {{ else }}
-  {{ errorf "No valid video file with filename %q found." $video_src }}
+  {{/* No file of given name was found, we stop here. */}}
+  {{ errorf "No file with filename %q found." $video_src }}
 {{ end }}
 
+{{ if $filenotfound }}
+{{ else }}
 <video controls preload="auto" width="{{ or (.Get "width") $width }}" {{ if eq (.Get "autoplay") "true" }}autoplay {{ end }}{{ if eq (.Get "loop") "true" }}loop {{ end }}{{ if eq (.Get "muted") "true" }}muted {{ end }}{{ with $poster }}poster="{{ .RelPermalink }}" {{ end }}class="html-video">
   {{ with $video_webm }}
     <source src="{{ $video_webm.RelPermalink }}" type="video/webm" }}>
@@ -54,3 +59,4 @@
   {{ end }}
   <p>{{ i18n "videoUnsupported" $video_dl }}</p>
 </video>
+{{ end }}
