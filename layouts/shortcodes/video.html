@@ -16,6 +16,7 @@
 {{ $video_dl := "" }}
 {{ $width := "100%" }}
 {{ $filenotfound := true }}
+{{ $unsupportedfile := true }}
 
 {{/* Find all files with filename (without suffix) matching "src" parameter. */}}
 {{ $video_files := (.Page.Resources.Match (printf "%s*" $video_src)) }}
@@ -28,12 +29,15 @@
   {{ $filenotfound = false }}
   {{ range . }}
     {{ if or (in .MediaType.Suffixes "mp4") (in .MediaType.Suffixes "m4v") }}
+      {{ $unsupportedfile = false }}
       {{ $video_mp4 = . }}
     {{ end }}
     {{ if (in .MediaType.Suffixes "webm") }}
+      {{ $unsupportedfile = false }}
       {{ $video_webm = . }}
     {{ end }}
     {{ if (in .MediaType.Suffixes "ogv") }}
+      {{ $unsupportedfile = false }}
       {{ $video_ogg = . }}
     {{ end }}
   {{ end }}
@@ -43,6 +47,8 @@
 {{ end }}
 
 {{ if $filenotfound }}
+{{ else if $unsupportedfile }}
+  {{ errorf "No valid video file with filename %q found." $video_src }}
 {{ else }}
 <video controls preload="auto" width="{{ or (.Get "width") $width }}" {{ if eq (.Get "autoplay") "true" }}autoplay {{ end }}{{ if eq (.Get "loop") "true" }}loop {{ end }}{{ if eq (.Get "muted") "true" }}muted {{ end }}{{ with $poster }}poster="{{ .RelPermalink }}" {{ end }}class="html-video">
   {{ with $video_webm }}
