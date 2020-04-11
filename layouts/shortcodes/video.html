@@ -25,7 +25,7 @@
 {{/* Find in page bundle all valid video files with matching name */}}
 {{ with $video_files }}
   {{ range . }}
-    {{ if (in .MediaType.Suffixes "mp4") }}
+    {{ if or (in .MediaType.Suffixes "mp4") (in .MediaType.Suffixes "m4v") }}
       {{ $video_mp4 = . }}
     {{ end }}
     {{ if (in .MediaType.Suffixes "webm") }}
