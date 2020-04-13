@@ -10,7 +10,9 @@ It comes with english, french and german localization. Other languages welcome! 
 
 ## Features
 
-This shortcode uses Hugo Page Resources. It takes one mandatory argument: the filename of the video file to display, __without the extension__. It detects automatically if several versions of the file exists in the page bundle, and add accordingly the multiple `src` tags. When an image file with the same filename is also present in the page bundle, it is automatically used as a poster frame.
+This shortcode uses Hugo [Page Resources](https://gohugo.io/content-management/page-resources/). The video to display __must be placed in the [page bundle](https://gohugo.io/content-management/page-bundles/)__.
+
+The shortcode takes one mandatory argument: the filename of the video file to display, __without the extension__. It detects automatically if several versions of the file exists in the page bundle, and add accordingly the multiple `src` tags. When an image file with the same filename is also present in the page bundle, it is automatically used as a poster frame.
 
 When the browser doesn't support the [HTML video element](https://devdocs.io/html/element/video), the shortcode displays a localized notice allowing the video download for local playing.
 
@@ -20,13 +22,13 @@ Following video formats are supported:
 - Ogg, (extension `.ogv`)
 
 Default values:
-- Browser's default controls are displayed (`controls` attribute is included)
-- Video can be preloaded (`preload="auto"` attribute is included)
+- Browser's default controls are displayed (`controls` attribute is always included)
+- Video can be preloaded (`preload="auto"` attribute is always included)
 - Video width is 100% (`width="100%"` attribute is included); this can be changed by indicating the desired width when calling the shortcode, see example below)
 - Following video attributes can be set: `muted="true"`, `autoplay="true"` and `loop="true"`. Credits goes to Tom McKenzie for this feature
 - Default settings are used for other video attributes
 
-When no video file of the given name is found in the supported format (see above), the shortcode intentionally fails with a `No valid video file with filename <filename> found.` error.
+When no video file of the given name is found in the supported format (see above), the shortcode __intentionally fails__ with a `No valid video file with filename <filename> found.` error.
 
 ## Usage
 
@@ -42,7 +44,8 @@ When no video file of the given name is found in the supported format (see above
     ```toml
     theme = ["hugo-video", "my-theme"]
     ```
-3. In your site, use the shortcode, this way, indicating the video filename __without its extension__. If your video file is `my-beautiful-screencast.mp4`, type this:
+3. Place your video file(s) in the [page bundle](https://gohugo.io/content-management/page-bundles/) of your post.
+4. In your site, use the shortcode, this way, indicating the video filename __without its extension__. If your video file is `my-beautiful-screencast.mp4`, type this:
     ```go
     {{< video src="my-beautiful-screencast" >}}
     ```
