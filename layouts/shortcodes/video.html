@@ -41,27 +41,26 @@
       {{ $video_ogg = . }}
     {{ end }}
   {{ end }}
-{{ else }}
-  {{/* No file of given name was found, we stop here. */}}
-  {{ errorf "No file with filename %q found." $video_src }}
 {{ end }}
 
 {{ if $filenotfound }}
+  {{/* No file of given name was found, we stop here. */}}
+  {{ errorf "No file with filename %q found." $video_src }}
 {{ else if $unsupportedfile }}
   {{ errorf "No valid video file with filename %q found." $video_src }}
 {{ else }}
 <video controls preload="auto" width="{{ or (.Get "width") $width }}" {{ if eq (.Get "autoplay") "true" }}autoplay {{ end }}{{ if eq (.Get "loop") "true" }}loop {{ end }}{{ if eq (.Get "muted") "true" }}muted {{ end }}{{ with $poster }}poster="{{ .RelPermalink }}" {{ end }}class="html-video">
   {{ with $video_webm }}
-    <source src="{{ $video_webm.RelPermalink }}" type="video/webm" }}>
-    {{ $video_dl = $video_webm }}
+    <source src="{{ .RelPermalink }}" type="video/webm" }}>
+    {{ $video_dl = . }}
   {{ end }}
   {{ with $video_ogg }}
-    <source src="{{ $video_ogg.RelPermalink }}" type="video/ogg" }}>
-    {{ $video_dl = $video_ogg }}
+    <source src="{{ .RelPermalink }}" type="video/ogg" }}>
+    {{ $video_dl = . }}
   {{ end }}
   {{ with $video_mp4 }}
-    <source src="{{ $video_mp4.RelPermalink }}" type="video/mp4" }}>
-    {{ $video_dl = $video_mp4 }}
+    <source src="{{ .RelPermalink }}" type="video/mp4" }}>
+    {{ $video_dl = . }}
   {{ end }}
   <p>{{ i18n "videoUnsupported" $video_dl | markdownify }}</p>
 </video>
