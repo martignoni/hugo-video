@@ -25,6 +25,7 @@ Default values:
 - Browser's default controls are displayed (`controls` attribute is always included)
 - Video can be preloaded (`preload="auto"` attribute is always included)
 - Video width is 100% (`width="100%"` attribute is included); this can be changed by indicating the desired width when calling the shortcode, see example below)
+- Video height attribute is not set by default, but can be explicitly set by indicating the desired height in pixels (i.e. `height="640"`).
 - Following video attributes can be set: `muted="true"`, `autoplay="true"` and `loop="true"`. Credits goes to Tom McKenzie for this feature
 - Default settings are used for other video attributes
 
