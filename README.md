@@ -25,8 +25,8 @@ Default values:
 - Browser's default controls are displayed (`controls` attribute is always included)
 - Video can be preloaded (`preload="auto"` attribute is always included)
 - Video width is 100% (`width="100%"` attribute is included); this can be changed by indicating the desired width when calling the shortcode, see example below)
-- Video height attribute is not set by default, but can be explicitly set by indicating the desired height in pixels (i.e. `height="640"`).
-- Following video attributes can be set: `muted="true"`, `autoplay="true"` and `loop="true"`. Credits goes to Tom McKenzie for this feature
+- Video height attribute is not set by default, but can be explicitly set by indicating the desired height in pixels (i.e. `height="640"`); credit goes to Evgeny Kuznetsov for this feature
+- Following other video attributes can be set: `muted="true"`, `autoplay="true"` and `loop="true"`. Credit goes to Tom McKenzie for this feature
 - Default settings are used for other video attributes
 
 When no video file of the given name is found in the supported format (see above), the shortcode __intentionally fails__ with a `No valid video file with filename <filename> found.` error.
@@ -60,6 +60,7 @@ When no video file of the given name is found in the supported format (see above
 - To [Tom McKenzie](https://github.com/grrowl), for implementing `muted`, `autoplay` and `loop` video attributes support.
 - To [Olaf Haag](https://github.com/OlafHaag) and [Paul Lettington](https://github.com/plett), for raising and fixing some bugs.
 - To [Arsenii Lyashenko](https://github.com/ark0f), for implementing `controls` disabling option and for providing the russian localization.
+- To [Evgeny Kuznetsov](https://github.com/nekr0z), for implementing `height` optional attribute.
 
 ### Licence
 
