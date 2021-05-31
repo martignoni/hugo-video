@@ -58,7 +58,7 @@ When no video file of the given name is found in the supported format (see above
 ### Thanks
 
 - To [Tom McKenzie](https://github.com/grrowl), for implementing `muted`, `autoplay` and `loop` video attributes support.
-- To [Olaf Haag](https://github.com/OlafHaag) and [Paul Lettington](https://github.com/plett), for raising and fixing some bugs.
+- To [Olaf Haag](https://github.com/OlafHaag), [Paul Lettington](https://github.com/plett) and [Christian Mahnke](https://github.com/cmahnke), for raising and fixing some bugs.
 - To [Arsenii Lyashenko](https://github.com/ark0f), for implementing `controls` disabling option and for providing the russian localization.
 - To [Evgeny Kuznetsov](https://github.com/nekr0z), for implementing `height` optional attribute.
 
