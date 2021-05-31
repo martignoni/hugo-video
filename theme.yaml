@@ -12,7 +12,7 @@ tags:
   - multilingual
 features:
   - simple video embedding
-  - multilingual (en, fr, de)
+  - multilingual (en, fr, de, ru)
 min_version: 0.40.0
 
 author:
