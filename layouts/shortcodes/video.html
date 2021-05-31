@@ -51,15 +51,15 @@
 {{- else -}}
 <video {{ if ne (.Get "controls") "false" }}controls {{ end }}preload="auto" width="{{ or (.Get "width") $width }}" {{ with .Get "height" }}height="{{.}}"{{ end }} {{ if eq (.Get "autoplay") "true" }}autoplay {{ end }}{{ if eq (.Get "loop") "true" }}loop {{ end }}{{ if eq (.Get "muted") "true" }}muted {{ end }}{{ with $poster }}poster="{{ .RelPermalink }}" {{ end }}playsinline class="html-video">
   {{- with $video_webm }}
-    <source src="{{ .RelPermalink }}" type="video/webm" }}>
+    <source src="{{ .RelPermalink }}" type="video/webm">
     {{- $video_dl = . -}}
   {{- end }}
   {{- with $video_ogg }}
-    <source src="{{ .RelPermalink }}" type="video/ogg" }}>
+    <source src="{{ .RelPermalink }}" type="video/ogg">
     {{- $video_dl = . -}}
   {{- end }}
   {{- with $video_mp4 }}
-    <source src="{{ .RelPermalink }}" type="video/mp4" }}>
+    <source src="{{ .RelPermalink }}" type="video/mp4">
     {{- $video_dl = . -}}
   {{- end }}
   <p>{{ i18n "videoUnsupported" $video_dl | safeHTML}}</p>
