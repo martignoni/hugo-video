@@ -9,6 +9,9 @@
 /*
 */ -}}
 
+{{ $videoStyles := resources.Get "/css/video.css" | minify }}
+<link rel="stylesheet" href="{{ $videoStyles.Permalink }}" >
+
 {{- $video_src := .Get "src" -}}
 {{- $video_mp4 := "" -}}
 {{- $video_webm := "" -}}
@@ -64,4 +67,11 @@
   {{- end }}
   <span>{{ i18n "videoUnsupported" $video_dl | safeHTML}}</span>
 </video>
+{{- if .Get "desc" -}}
+        <div class="video-desc">
+            {{ with (.Get "desc") -}}
+                <p>{{ . }}</p>
+            {{- end -}}
+        </div>
+    {{- end }}
 {{- end -}}
