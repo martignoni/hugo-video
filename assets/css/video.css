@@ -1,6 +1,8 @@
 .video-desc {
     font-size: 13px;
+    color: var(--secondary);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 0.6rem;
 }
