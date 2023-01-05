@@ -6,7 +6,7 @@
 
 This [Hugo](https://gohugo.io) theme component provides a shortcode: `video` for embedding videos using the [HTML video element](https://devdocs.io/html/element/video).
 
-It comes with english, french, german and russian localization. Other languages welcome! Send your pull request.
+It comes with english, french, german, russian and japanese localization. Other languages welcome! Send your pull request.
 
 ## Features
 
@@ -61,6 +61,7 @@ When no video file of the given name is found in the supported format (see above
 - To [Olaf Haag](https://github.com/OlafHaag), [Paul Lettington](https://github.com/plett) and [Christian Mahnke](https://github.com/cmahnke), for raising and fixing some bugs.
 - To [Arsenii Lyashenko](https://github.com/ark0f), for implementing `controls` disabling option and for providing the russian localization.
 - To [Evgeny Kuznetsov](https://github.com/nekr0z), for implementing `height` optional attribute.
+- To [Genji Fujimori](https://github.com/ahandsel), for providing the japanese localization.
 
 ### Licence
 
