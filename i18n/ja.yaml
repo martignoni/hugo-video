@@ -1,0 +1,2 @@
+- id: videoUnsupported
+  translation: "お使いのブラウザは埋め込み動画をサポートしていませんが、<a href=\"{{ .RelPermalink }}\">ダウンロード</a> して、お好きなメディアプレーヤーで再生できます。"
