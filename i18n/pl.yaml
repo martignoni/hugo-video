@@ -1,0 +1,2 @@
+- id: videoUnsupported
+  translation: "Twoja przeglądarka nie wspiera osadzania filmów, lecz nie martw się, możesz <a href=\"{{ .RelPermalink }}\">pobrać</a> i obejrzeć go w swoim ulubionym odtwarzaczu wideo!"
