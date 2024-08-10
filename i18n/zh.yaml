@@ -1,0 +1,2 @@
+- id: videoUnsupported
+  translation: "非常遗憾，您所使用的浏览器不支持播放，您可以通过<a href=\"{{ .RelPermalink }}\">下载</a> 用您喜欢的软件打开。"
