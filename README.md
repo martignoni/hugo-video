@@ -6,7 +6,7 @@
 
 This [Hugo](https://gohugo.io) theme component provides a shortcode: `video` for embedding videos using the [HTML video element](https://devdocs.io/html/element/video).
 
-It comes with english, french, german, russian, japanese, korean and polish localization. Other languages welcome! Send your pull request.
+It comes with English, French, German, Russian, Japanese, Korean, Polish, Chinese and Chinese (Taiwan) localizations. Other languages welcome! Send your pull request.
 
 ## Features
 
@@ -55,15 +55,26 @@ When no video file of the given name is found in the supported format (see above
     {{< video src="my-beautiful-screencast" width="600px" >}}
     ```
 
-### Thanks
+### Acknowledgements
 
-- To [Tom McKenzie](https://github.com/grrowl), for implementing `muted`, `autoplay` and `loop` video attributes support.
-- To [Olaf Haag](https://github.com/OlafHaag), [Paul Lettington](https://github.com/plett) and [Christian Mahnke](https://github.com/cmahnke), for raising and fixing some bugs.
-- To [Arsenii Lyashenko](https://github.com/ark0f), for implementing `controls` disabling option and for providing the russian localization.
-- To [Evgeny Kuznetsov](https://github.com/nekr0z), for implementing `height` optional attribute.
-- To [Genji Fujimori](https://github.com/ahandsel), for providing the japanese localization.
-- To [Junho Park](https://github.com/cnaa97), for providing the korean localization.
-- To [Dominik Palula](https://github.com/D00NIK), for providing the polish localization.
+#### Localization
+
+Thanks to
+
+- [Arsenii Lyashenko](https://github.com/ark0f), for providing the Russian localization.
+- [Genji Fujimori](https://github.com/ahandsel), for providing the Japanese localization.
+- [Junho Park](https://github.com/cnaa97), for providing the Korean localization.
+- [Dominik Palula](https://github.com/D00NIK), for providing the Polish localization.
+- [hst1189](https://github.com/hst1189) for providing the Chinese and Chinese (Taiwan) localizations.
+
+#### Developement
+
+Thanks to
+
+- [Tom McKenzie](https://github.com/grrowl), for implementing `muted`, `autoplay` and `loop` video attributes support.
+- [Olaf Haag](https://github.com/OlafHaag), [Paul Lettington](https://github.com/plett) and [Christian Mahnke](https://github.com/cmahnke), for raising and fixing a few bugs.
+- [Arsenii Lyashenko](https://github.com/ark0f), for implementing `controls` disabling option.
+- [Evgeny Kuznetsov](https://github.com/nekr0z), for implementing `height` optional attribute.
 
 ### Licence
 
