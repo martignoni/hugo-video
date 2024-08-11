@@ -65,7 +65,7 @@ Thanks to
 - [Genji Fujimori](https://github.com/ahandsel), for providing the Japanese localization.
 - [Junho Park](https://github.com/cnaa97), for providing the Korean localization.
 - [Dominik Palula](https://github.com/D00NIK), for providing the Polish localization.
-- [hst1189](https://github.com/hst1189) for providing the Chinese and Chinese (Taiwan) localizations.
+- [hst1189](https://github.com/hst1189), for providing the Chinese and Chinese (Taiwan) localizations.
 
 #### Developement
 
