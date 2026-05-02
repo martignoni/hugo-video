@@ -6,7 +6,7 @@
 
 This [Hugo](https://gohugo.io) theme component provides a shortcode: `video` for embedding videos using the [HTML video element](https://devdocs.io/html/element/video).
 
-It comes with English, French, German, Russian, Japanese, Korean, Polish, Chinese and Chinese (Taiwan) localizations. Other languages welcome! Send your pull request.
+It comes with English, French, German, Russian, Japanese, Korean, Polish, Chinese, Chinese (Taiwan) and Spanish localizations. Other languages welcome! Send your pull request.
 
 ## Features
 

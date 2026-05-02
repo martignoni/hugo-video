@@ -1,0 +1,2 @@
+- id: videoUnsupported
+  translation: "Tu navegador no admite vídeos incrustados, pero no te preocupes: ¡puedes <a href=\"{{ .RelPermalink }}\">descargarlo</a> y verlo con tu reproductor de vídeo favorito!"
