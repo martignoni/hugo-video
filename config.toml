@@ -1,0 +1,3 @@
+[mediaTypes]
+[mediaTypes."video/mp4"]
+suffixes = ["mp4", "m4v"]
